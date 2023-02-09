@@ -69,7 +69,7 @@ function game(e) {
     // game goes until one reaches 5 points
     const playerScoreHTML = document.querySelector(".player_score");
     const compScoreHTML = document.querySelector(".comp_score");
-
+    const audio = document.querySelector("audio");
 
     let roundResult = playRound(e.className);
 
@@ -84,6 +84,8 @@ function game(e) {
     compScoreHTML.textContent = compScore;
 
     e.classList.add("selected");
+    audio.currentTime = 0;
+    audio.play();
 
     console.log(playerScore, compScore);
 
